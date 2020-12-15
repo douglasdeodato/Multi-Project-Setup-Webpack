@@ -1,15 +1,14 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require ('clean-webpack-plugin');
 const HtmlWebpackPlugin = require ('html-webpack-plugin');
+const  { ModuleFederationPlugin }  = require('webpack').container;
 
 module.exports = {
-    entry: {
-        'page1': './src/page1.js',
-    },
+    entry:'./src/page1.js',
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: ''
+        publicPath: 'http://localhost:9001/'
     },
     mode:'development',
     devServer: {
@@ -53,6 +52,13 @@ module.exports = {
             title: 'hello world handlebars',
             template: 'src/index.hbs',
             description: 'page 1 desc'
+        }),
+        new ModuleFederationPlugin({
+            name:'HelloWorldApp',
+            filename:'remoteEntry.js',
+            exposes: {
+              './HelloWorldButton': './src/components/hello-world-button/hello-world-button.js'
+            }
         })
     ]
 }

@@ -1,5 +1,5 @@
 
-import './page1.scss';
+import './hello-world-button.scss';
 
 class HelloWorldButton {
     buttonCssClass = 'hello-world-button'

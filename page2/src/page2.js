@@ -5,3 +5,11 @@ const heading = new Heading();
 heading.render('potato');
 const potatoImg = new PotatoImg();
 potatoImg.render();
+
+import('HelloWorldApp/HelloWorldButton')
+.then(HelloWorldButtonModule => {
+    const HelloWorldButton = HelloWorldButtonModule.default;
+    const helloWorldButton = new HelloWorldButton();
+    helloWorldButton.render();
+
+})

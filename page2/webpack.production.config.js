@@ -2,6 +2,8 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ModuleFederationPlugin } = require('webpack').container;
+
 
 module.exports = {
     entry: './src/page2.js',
@@ -62,6 +64,12 @@ module.exports = {
             title: 'hello world handlebars',
             template: 'src/index.hbs',
             description: 'page 2 desc'
+        }),
+        new ModuleFederationPlugin({
+            name:'page2',
+            remotes: {
+                HelloWorldApp:'HelloWorldApp@http://localhost:9001/remoteEntry.js'
+            }
         })
     ]
 }
