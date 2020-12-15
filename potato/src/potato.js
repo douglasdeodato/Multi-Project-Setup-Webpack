@@ -1,5 +1,5 @@
 import Heading from './components/heading/heading.js';
-import PotatoImg from './components/page2/page2.js';
+import PotatoImg from './components/potato/potato.js';
 
 const heading = new Heading();
 heading.render('potato');

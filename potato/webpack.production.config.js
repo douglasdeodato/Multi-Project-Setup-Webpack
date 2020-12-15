@@ -1,22 +1,24 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require ('clean-webpack-plugin');
-const HtmlWebpackPlugin = require ('html-webpack-plugin');
-const {ModuleFederationPlugin} = require('webpack').container;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ModuleFederationPlugin } = require('webpack').container;
 
 
 module.exports = {
-    entry: './src/page2.js',
+    entry: './src/potato.js',
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: ''
+        publicPath: '/static/'
     },
-    mode:'development',
-    devServer: {
-        contentBase: path.resolve(__dirname, './dist'),
-        index: 'page2.html',
-        port: 9002,
-        writeToDisk: true
+    mode: 'production',
+    optimization: {
+        splitChunks: {
+            chunks: "all",
+            minSize: 10000,
+            automaticNameDelimiter: '_'
+        }
     },
 
     module: {
@@ -28,15 +30,15 @@ module.exports = {
                 ]
             },
             {
-                test:/\.scss$/,
-                use:[
-                    'style-loader', 'css-loader', 'sass-loader'
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
                 ]
             },
             {
-                test:/\.js$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
-                use:{
+                use: {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/env'],
@@ -45,17 +47,20 @@ module.exports = {
                 }
             },
             {
-            test: /\.hbs$/,
-            use: [
-                'handlebars-loader'
-            ]
-        }
+                test: /\.hbs$/,
+                use: [
+                    'handlebars-loader'
+                ]
+            }
         ]
     },
-    plugins : [
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css',
+        }),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'page2.html',
+            filename: 'potato.html',
             title: 'hello world handlebars',
             template: 'src/index.hbs',
             description: 'page 2 desc'
