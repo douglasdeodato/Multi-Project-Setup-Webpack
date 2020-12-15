@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require ('html-webpack-plugin');
 const  { ModuleFederationPlugin }  = require('webpack').container;
 
 module.exports = {
-    entry:'./src/page1.js',
+    entry:'./src/hello-world.js',
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, './dist'),
@@ -13,7 +13,7 @@ module.exports = {
     mode:'development',
     devServer: {
         contentBase: path.resolve(__dirname, './dist'),
-        index: 'page1.html',
+        index: 'hello-world.html',
         port: 9001,
         writeToDisk: true
     },
@@ -48,10 +48,10 @@ module.exports = {
     plugins : [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'page1.html',
+            filename: 'hello-world.html',
             title: 'hello world handlebars',
             template: 'src/index.hbs',
-            description: 'page 1 desc'
+            description: 'hello-world desc'
         }),
         new ModuleFederationPlugin({
             name:'HelloWorldApp',

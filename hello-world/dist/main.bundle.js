@@ -53,14 +53,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/page1.js":
-/*!**********************!*\
-  !*** ./src/page1.js ***!
-  \**********************/
+/***/ "./src/hello-world.js":
+/*!****************************!*\
+  !*** ./src/hello-world.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_heading_heading_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/heading/heading.js */ \"./src/components/heading/heading.js\");\n/* harmony import */ var _components_hello_world_button_hello_world_button_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/hello-world-button/hello-world-button.js */ \"./src/components/hello-world-button/hello-world-button.js\");\n\n\n\nif (false) {} else if (true) {\n  console.log('development mode');\n}\n\nvar heading = new _components_heading_heading_js__WEBPACK_IMPORTED_MODULE_0__.default();\nheading.render('hello world button');\nvar helloWorldButton = new _components_hello_world_button_hello_world_button_js__WEBPACK_IMPORTED_MODULE_1__.default();\nhelloWorldButton.render();\n\n//# sourceURL=webpack://webpack5-fresh/./src/page1.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_heading_heading_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/heading/heading.js */ \"./src/components/heading/heading.js\");\n/* harmony import */ var _components_hello_world_button_hello_world_button_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/hello-world-button/hello-world-button.js */ \"./src/components/hello-world-button/hello-world-button.js\");\n\n\n\nif (false) {} else if (true) {\n  console.log('development mode');\n}\n\nvar heading = new _components_heading_heading_js__WEBPACK_IMPORTED_MODULE_0__.default();\nheading.render('hello world button');\nvar helloWorldButton = new _components_hello_world_button_hello_world_button_js__WEBPACK_IMPORTED_MODULE_1__.default();\nhelloWorldButton.render();\n\n//# sourceURL=webpack://webpack5-fresh/./src/hello-world.js?");
 
 /***/ }),
 
@@ -522,7 +522,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "8153f72fa68df0513de7"
+/******/ 		__webpack_require__.h = () => "48a9d4da3bf8038e7955"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -1465,7 +1465,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	__webpack_require__("./src/page1.js");
+/******/ 	__webpack_require__("./src/hello-world.js");
 /******/ 	__webpack_require__("./node_modules/webpack-dev-server/client/index.js?http://localhost:9001");
 /******/ 	__webpack_require__("./node_modules/webpack/hot/dev-server.js");
 /******/ })()

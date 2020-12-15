@@ -6,7 +6,7 @@ const { ModuleFederationPlugin } = require('webpack').container;
 
 
 module.exports = {
-    entry:'./src/page1.js',
+    entry:'./src/hello-world.js',
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, './dist'),
@@ -54,7 +54,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'page1.html',
+            filename: 'hello-world.html',
             title: 'hello world handlebars',
             template: 'src/index.hbs',
             description: 'page 1 desc'

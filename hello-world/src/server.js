@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 app.get('/', function (req, res){
-    const pathToHtmlFile = path.resolve(__dirname, '../dist/page1.html');
+    const pathToHtmlFile = path.resolve(__dirname, '../dist/hello-world.html');
     const contentFromHtmlFile = fs.readFileSync(pathToHtmlFile, 'utf-8');
     res.send(contentFromHtmlFile);
 });

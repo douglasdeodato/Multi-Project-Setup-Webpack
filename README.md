@@ -11,3 +11,6 @@ package-sample.json  and copy the dependecies of the project before you install
 
 rm -rf node_modules
 npm install
+
+# Module Federation 
+
